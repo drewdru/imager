@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>MyButton.qml</file>
+        <file>ShowProcessing.qml</file>
+        <file>MoveAppWindow.qml</file>
+        <file>CustomMenuBar.qml</file>
+        <file>MyComboBox.qml</file>
+        <file>SelfDestroyingRect.qml</file>
+        <file>ImageListView.qml</file>
+        <file>AllProcessing.qml</file>
+        <file>MyFrameless.qml</file>
+    </qresource>
+    <qresource prefix="/image">
+        <file alias="icon">icon.png</file>
+    </qresource>
+</RCC>
