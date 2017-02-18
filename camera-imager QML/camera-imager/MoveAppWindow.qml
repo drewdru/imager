@@ -43,7 +43,7 @@ Item {
 }
 
 
-//    Rectangle {//ИЗ-ЗА растяжения других эл. -- НЕТ не так ОШИБКА Я "НИПАНИМАТ"!
+//    Rectangle {//FAIL!!
 //        anchors.fill: parent
 //        color: "#00FFFFFF"
 
