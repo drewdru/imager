@@ -59,7 +59,7 @@ void Hue::RGB_TO_HSL(uchar* bitmap, double* newBitmap, size_t n)
     for (size_t i = 1; i < n-1; i += 4)
     {
         double R = bitmap[i + 1] / 255.0; //
-        double G = bitmap[i] / 255.0; // Приводим к диапазону от 0 до 1
+        double G = bitmap[i] / 255.0; 
         double B = bitmap[i - 1] / 255.0; //
 
         double temp = G >= B ? G : B;
@@ -68,7 +68,7 @@ void Hue::RGB_TO_HSL(uchar* bitmap, double* newBitmap, size_t n)
         temp = G <= B ? G : B;
         double Min = R <= temp ? R : temp;
 
-        //Вычисляем тон
+        //Get hue
         if (Max == Min)
         {
             H = 0;
@@ -90,10 +90,10 @@ void Hue::RGB_TO_HSL(uchar* bitmap, double* newBitmap, size_t n)
             H = 60.0 * (R - G) / (Max - Min) + 240.0;
         }
 
-        //Вычисляем светлоту
+        //Gel lightness
         L = (Max + Min) / 2.0;
 
-        //Вычисляем насыщенность
+        //Get saturation
         if (L == 0 || Max == Min)
         {
             S = 0;
@@ -121,7 +121,7 @@ void Hue::HSL_TO_RGB(uchar* bitmap, double* newBitmap, size_t n)
         if (newBitmap[i] == 0)
         {
             R = (int)round(newBitmap[i - 1] * 255.0); //
-            G = (int)round(newBitmap[i - 1] * 255.0); //Округляем значения
+            G = (int)round(newBitmap[i - 1] * 255.0); //
             B = (int)round(newBitmap[i - 1] * 255.0); //
         }
         else
@@ -132,7 +132,7 @@ void Hue::HSL_TO_RGB(uchar* bitmap, double* newBitmap, size_t n)
             double P = (2.0 * newBitmap[i - 1]) - Q;
 
             double HK = newBitmap[i + 1] / 360.0;
-            double* T = new double[3];   //Массив для хранения значений R,G,B
+            double* T = new double[3];   //Temp R,G,B
 
             T[0] = HK + (1.0 / 3.0);   // R
             T[1] = HK;         // G
