@@ -24,7 +24,6 @@ public:
     int Process(uchar* bitmap, size_t n, QVector<QString> argv);
 
 private:
-    //Растяжение контрастности (autolevels)
     void autolevels(uchar* bitmap, size_t n);
 };
 
