@@ -44,10 +44,9 @@ int Gamma::Process(uchar* bitmap, size_t n, QVector<QString> argv)
 void Gamma::gamma(uchar* bitmap, size_t n, float value)
 {
     uchar* RampTable = new uchar[256];
-    //Вычислям общий коэффицент гаммы,который потребуется для вычисления главного значения
     double temp = 5.0 <= value ? 5.0 : value;
     double Gam = 0.1 >= temp ? 0.1 : temp;
-    double G = 1 / Gam; //Главное значение гаммы
+    double G = 1 / Gam;
 
     for (int i = 0; i < 256; i++)
     {
